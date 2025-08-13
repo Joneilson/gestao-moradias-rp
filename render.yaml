@@ -1,5 +1,5 @@
 databases:
-  - name: gestao-moradias-db
+  - name: gestao-moradias-db-1
     plan: free
     databaseName: gestao_moradias
     user: gm_user
@@ -7,7 +7,7 @@ databases:
 services:
   
   - type: web
-    name: gestao-moradias-backend
+    name: gestao-moradias-backend-1
     plan: free
     runtime: docker
     repo: https://github.com/Joneilson/gestao-moradias-rp
@@ -40,7 +40,7 @@ services:
 
  
   - type: web
-    name: gestao-moradias-frontend
+    name: gestao-moradias-frontend-1
     plan: free
     runtime: docker
     repo: https://github.com/Joneilson/gestao-moradias-rp
