@@ -1,7 +1,7 @@
 databases:
   - name: gestao-moradias-db-1
     plan: free
-    databaseName: gestao_moradias
+    databaseName: gestao_moradias_1
     user: gm_user
 
 services:
@@ -18,16 +18,16 @@ services:
     envVars:
       
       - key: SPRING_DATASOURCE_URL
-        value: jdbc:postgresql://${gestao-moradias-db.host}:${gestao-moradias-db.port}/${gestao-moradias-db.database}?sslmode=require
+        value: jdbc:postgresql://${gestao-moradias-db-1.host}:${gestao-moradias-db-1.port}/${gestao-moradias-db-1.database}?sslmode=require
 
       
       - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
-          name: gestao-moradias-db
+          name: gestao-moradias-db-1
           property: user
       - key: SPRING_DATASOURCE_PASSWORD
         fromDatabase:
-          name: gestao-moradias-db
+          name: gestao-moradias-db-1
           property: password
 
       
@@ -36,7 +36,7 @@ services:
 
       
       - key: FRONTEND_URL
-        value: "https://gestao-moradias-frontend.onrender.com"
+        value: "https://gestao-moradias-frontend-1.onrender.com"
 
  
   - type: web
@@ -50,4 +50,4 @@ services:
     envVars:
       
       - key: NG_APP_API_URL
-        value: "https://gestao-moradias-backend.onrender.com"
+        value: "https://gestao-moradias-backend-1.onrender.com"
